@@ -5,8 +5,9 @@
 
 using namespace std;
 
-int getType(const char);
-bool addTokenList(const string, const char);
+int getType(const char);  // 获取字符类型
+void addTokenList(const string);  // 将字符串加入 token
+bool parseSpec(const char);  // 分析特殊字符
 
 bool wordAnalyse()  // 词法分析
 {
@@ -26,7 +27,10 @@ bool wordAnalyse()  // 词法分析
             case ST_ERROR: flag = false; break;
             case ST_NUM: word.append(string {ch}); break;
             case ST_VAR: word.append(string {ch}); break;
-            case ST_TOKEN: flag = addTokenList(word, ch); break;
+            case ST_TOKEN:
+                addTokenList(word);
+                flag = parseSpec(ch);
+                break;
             default: break;
         }
     }
@@ -34,7 +38,7 @@ bool wordAnalyse()  // 词法分析
 }
 
 
-int getType(const char ch)
+int getType(const char ch)  // 获取字符类型
 {
     int type = 0;
 
@@ -49,13 +53,17 @@ int getType(const char ch)
 }
 
 
-bool addTokenList(const string word, const char ch)
+void addTokenList(const string word)  // 将字符串加入 token
+{
+
+}
+
+bool parseSpec(const char ch)  // 分析特殊字符
 {
     bool flag = true;  // 正常标准
 
     return flag;
 }
-
 /*
 {
     if (ch != '\n' && ch != '{')  // 处理其他类型
