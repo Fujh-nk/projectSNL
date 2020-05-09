@@ -5,10 +5,11 @@
 #include<string>
 #include<array>
 
-#define NUM 1  // 0-9的标识
-#define LETTER 2  // a-z, A-Z的标识
-#define SPECCHAR 3  // 特殊字符标识
-#define UNKNOW 0  // 不可识别标识
+// 字符类别标识
+#define C_NUM 1  // 0-9的标识
+#define C_LETTER 2  // a-z, A-Z的标识
+#define C_SPECCHAR 3  // 特殊字符标识
+#define C_UNKNOW 0  // 不可识别标识
 
 #define KIND 4  // 字符类别数(包括不可识别标识)
 #define STATE 3  // 状态机状态数
@@ -19,6 +20,13 @@
 
 #define NUM_OF_REWORD 21  // 保留字数目
 #define NUM_OF_SPECCHAR 15  // 特殊符号数目
+
+// token 类别
+#define TK_UINT 1  // 整形常量
+#define TK_SPECCHAR 2  // 特殊字符
+#define TK_REWORD 3  // 保留字
+#define TK_ID 4  // 标识符
+#define TK_CHAR 5  // 字符常量
 
 using namespace std;
 
@@ -42,6 +50,7 @@ const array<string, NUM_OF_SPECCHAR> specChar  // 特殊符号数组
 ":=", ".", ".."};
 
 const string specChar_str = "+-*/()[];<:=. \t\n'{}";  // 特殊字符组成的字符串
+const unsigned int spacePos = specChar_str.find(' ');  // 空格的位置
 
 const int transMatrix[STATE][KIND]  // 状态转移矩阵
 {ST_ERROR, ST_NUM, ST_VAR, ST_TOKEN,

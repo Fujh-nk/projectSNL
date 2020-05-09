@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1588951889 source:d:\c-programming\程序大三下\analysisproject\main.cpp
+1588993329 source:d:\c-programming\程序大三下\analysisproject\main.cpp
 	<iostream>
 	"header.h"
 
-1588982027 d:\c-programming\程序大三下\analysisproject\header.h
+1588993233 d:\c-programming\程序大三下\analysisproject\header.h
 	<vector>
 	<string>
 	<array>
@@ -15,7 +15,7 @@
 1588941270 source:d:\c-programming\程序大三下\analysisproject\grammer.cpp
 	"header.h"
 
-1588949472 source:d:\c-programming\程序大三下\analysisproject\word.cpp
+1588993335 source:d:\c-programming\程序大三下\analysisproject\word.cpp
 	<iostream>
 	<string>
 	"header.h"
