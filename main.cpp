@@ -12,7 +12,10 @@ vector<string> var;  // ±êÊ¶·û
 int main()
 {
     bool wFlag = wordAnalyse();
-    for (token t : tokens)
-        cout << t.first << '\t' << t.second << endl;
+    if (wFlag)
+        for (token t : tokens)
+            cout << t.first << '\t' << t.second << endl;
+    else
+        cout << "false" << endl;
     return 0;
 }
